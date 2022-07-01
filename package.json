@@ -1,0 +1,15 @@
+{
+  "name": "gnu",
+  "version": "1.0.0",
+  "description": "A GNU/Linux copypasta generator",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": ["gnu", "linux", "copypasta"],
+  "author": "malted",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
