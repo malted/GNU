@@ -1,7 +1,13 @@
 const spans = document.getElementsByClassName("editable");
 const inputField = document.getElementById("input")
 const copyButton = document.getElementById("copy");
-const paragraphs = document.getElementsByTagName("p");
+const uwuCheck = document.getElementById("uwu");
+
+const normalSection = document.getElementById("normalpasta");
+const normalParagraphs = normalSection.childNodes;
+
+const uwuSection = document.getElementById("uwupasta");
+const uwuParagraphs = uwuSection.childNodes;
 
 inputField.oninput = function() {
     for (let i = 0; i < spans.length; i++) {
@@ -12,9 +18,34 @@ inputField.oninput = function() {
 
 copyButton.onclick = function() {
     let text = "";
-    for (let i = 0; i < paragraphs.length; i++) {
-        text += paragraphs[i].textContent;
-        if (i < paragraphs.length - 1) text += "\n\n";
+    if (uwuCheck.checked) {
+        for (let i = 0; i < uwuParagraphs.length; i++) {
+            text += uwuParagraphs[i].textContent;
+            if (i < uwuParagraphs.length - 1) text += "\n\n";
+        }
+    } else {
+        for (let i = 0; i < normalParagraphs.length; i++) {
+            text += normalParagraphs[i].textContent;
+            if (i < normalParagraphs.length - 1) text += "\n\n";
+        }
     }
     navigator.clipboard.writeText(text);
 }
+
+uwuCheck.onchange = function() {
+    if (this.checked) {
+        normalSection.style.visibility = "hidden";
+        normalSection.style.position = "absolute";
+
+        uwuSection.style.visibility = "visible";
+        uwuSection.style.position = "relative";
+    } else {
+        normalSection.style.visibility = "visible";
+        normalSection.style.position = "relative";
+
+        uwuSection.style.visibility = "hidden";
+        uwuSection.style.position = "absolute";
+    }
+}
+
+inputField.focus();
