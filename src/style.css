@@ -12,13 +12,23 @@
 }
 
 * {
-    color: white;
+    --bg: #293241;
+    --text: #E0FBFC;
+    --primary: #3D5A80;
+    --secondary: #98C1D9;
+    --accent: #EE6C4D;
+
+    color: var(--text);
 }
 
 html {
     font-family: "JetBrains Mono", monospace;
     
-    background-color: #292e29;
+    background-color: var(--bg);
+}
+
+*::selection {
+    background-color: var(--primary);
 }
 
 #container {
@@ -42,26 +52,39 @@ h1 {
     gap: 1rem;
 }
 
-input {
+input[type="text"] {
     text-align: center;
     padding: 1rem;
-    border: 1px solid white;
+    border: 2px solid var(--secondary);
     border-radius: .5rem;
     background-color: transparent;
     font-size: 1rem;
 }
-input:hover {
-    background-color: #202420;
+input[type="text"]:hover {
+    background-color: var(--primary);
+}
+input[type="text"]:focus {
+    background-color: var(--primary);
+    outline: 2px solid var(--accent);
+    border-color: transparent
 }
 button {
     padding: 1rem;
-    border: 1px solid white;
+    border: 2px solid var(--secondary);
     border-radius: .5rem;
     background-color: transparent;
     font-size: 1rem;
 }
 button:hover {
-    background-color: #202420;
+    background-color: var(--primary);
+}
+button:active {
+    outline: 2px solid var(--accent);
+    border-color: transparent
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
 }
 
 #uwu-input {
