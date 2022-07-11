@@ -11,13 +11,13 @@
     font-style: normal;
 }
 
-
 * {
-    font-family: "JetBrains Mono", monospace;
     color: white;
 }
 
 html {
+    font-family: "JetBrains Mono", monospace;
+    
     background-color: #292e29;
 }
 
@@ -90,6 +90,11 @@ label[for="uwu"] {
     position: absolute;
 }
 
+@media screen and (max-width: 900px) {
+    .copypasta {
+        max-width: 70vw;
+    }
+}
 @media screen and (max-width: 600px) {
     #input-container {
         display: flex;
@@ -100,3 +105,4 @@ label[for="uwu"] {
         max-width: 90vw;
     }
 }
+

@@ -10,6 +10,6 @@
   "author": "malted",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.6.2"
+    "parcel": "2.5.0"
   }
 }
